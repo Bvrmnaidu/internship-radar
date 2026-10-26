@@ -1,0 +1,96 @@
+name: Daily Job Scrape
+
+on:
+  schedule:
+    # GitHub cron is UTC and unreliable: it dropped 07:00 UTC on 23 Oct 2026 and started the
+    # 07:17 UTC trigger ~5 hours late on 24-25 Oct. So there are several triggers, and the
+    # "Decide" step lets the first one at/after 09:00 Hamburg time send the email, once per day.
+    # For an on-time 09:00 email, an external scheduler calls workflow_dispatch with auto=true
+    # (see README); these crons are the safety net if it ever fails.
+    - cron: "17 7 * * *"      # 09:17 summer / 08:17 winter
+    - cron: "47 7 * * *"
+    - cron: "17 8 * * *"      # 09:17 winter
+    - cron: "47 8 * * *"
+    - cron: "17 10 * * *"     # late backups in case the earlier ones are dropped
+    - cron: "17 13 * * *"
+  workflow_dispatch:
+    inputs:
+      auto:
+        description: "Automatic trigger: send only if no email went out today. Leave off for a manual run."
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  actions: read               # lets the Decide step see today's earlier runs
+
+concurrency:                  # a backup trigger waits for a still-running 09:17 run, then skips
+  group: daily-job-scrape
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    # Public showcase repo: scheduled runs are skipped unless you opt in with the repository
+    # variable ENABLE_SCHEDULE=true (Settings > Secrets and variables > Actions > Variables).
+    if: github.event_name == 'workflow_dispatch' || vars.ENABLE_SCHEDULE == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Decide whether this trigger should send today's email
+        id: gate
+        if: github.event_name == 'schedule' || inputs.auto
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: bash .github/scripts/should_run.sh
+
+      - name: Set up Python 3.11
+        if: steps.gate.outputs.run != 'false'
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        if: steps.gate.outputs.run != 'false'
+        run: pip install -r requirements.txt
+
+      - name: Run scraper
+        if: steps.gate.outputs.run != 'false'
+        env:
+          GMAIL_USER:         ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          RECIPIENT_EMAIL:    ${{ secrets.RECIPIENT_EMAIL }}
+          # AI screening - set ONE of these secrets (Gemini free tier recommended)
+          GEMINI_API_KEY:     ${{ secrets.GEMINI_API_KEY }}
+          LLM_API_KEY:        ${{ secrets.LLM_API_KEY }}         # any OpenAI-compatible API...
+          LLM_BASE_URL:       ${{ vars.LLM_BASE_URL }}           # ...with its base URL
+          ANTHROPIC_API_KEY:  ${{ secrets.ANTHROPIC_API_KEY }}   # paid option
+          APIFY_TOKEN:        ${{ secrets.APIFY_TOKEN }}         # LinkedIn, Glassdoor, Indeed via Apify (optional)
+          LLM_MODEL:          ${{ vars.LLM_MODEL }}              # optional model override
+          LLM_WRITER_MODEL:   ${{ vars.LLM_WRITER_MODEL }}       # optional cover-letter model override
+          AI_MAX_JOBS:        "15"
+          AI_MAX_LETTERS:     "5"
+        run: python src/scraper.py
+
+      - name: Upload Excel as artifact
+        if: steps.gate.outputs.run != 'false'
+        uses: actions/upload-artifact@v4
+        with:
+          name: jobs-${{ github.run_id }}
+          path: |
+            output/*.xlsx
+            output/*.html
+          retention-days: 14
+
+      - name: Email a failure alert
+        if: failure()
+        env:
+          GMAIL_USER:         ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          RECIPIENT_EMAIL:    ${{ secrets.RECIPIENT_EMAIL }}
+          RUN_URL:            ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: python3 .github/scripts/notify_failure.py

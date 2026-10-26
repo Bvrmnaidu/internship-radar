@@ -1,0 +1,7 @@
+output/
+__pycache__/
+.pytest_cache/
+.env
+
+# your real profile stays local / in a private fork
+profile/cv.json

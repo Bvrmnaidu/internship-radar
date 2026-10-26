@@ -1,0 +1,48 @@
+{
+  "_note": "Example profile. Copy to profile/cv.json (git-ignored) and replace with your own facts. The AI engine may only use facts in this file, so everything in a cover letter traces back to it.",
+  "name": "Alex Example",
+  "goes_by": "Alex",
+  "contact": {
+    "email": "you@example.com",
+    "linkedin": "linkedin.com/in/your-handle",
+    "github": "github.com/your-handle",
+    "city": "Hamburg"
+  },
+  "status": {
+    "degree": "M.Sc. Data Science, Example University (expected graduation Sep 2027)",
+    "seeking": "Pflichtpraktikum (mandatory internship), at least 350 hours; 3-6 month full-time internships. Available April - September 2027",
+    "legal": "Mandatory internship as part of the degree; no sponsorship needed.",
+    "availability": "April 2027",
+    "locations": ["Hamburg (preferred)", "Remote Germany", "Open to relocating within Germany"],
+    "languages": {"English": "C1", "German": "A2 (learning)"}
+  },
+  "experience": [
+    {
+      "title": "AI Engineer (Working Student)",
+      "company": "Example GmbH, Hamburg",
+      "dates": "Nov 2025 - Mar 2026",
+      "points": [
+        "Built a retrieval-augmented generation pipeline over internal documents (embeddings, vector database, retrieval)",
+        "Logged every model decision in PostgreSQL so results could be reviewed and explained"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Internship Radar (this repo)",
+      "context": "Personal project, 2026",
+      "points": [
+        "Daily GitHub Actions pipeline that collects internship listings, ranks them and emails a report with LLM screening"
+      ]
+    }
+  ],
+  "coursework_strengths": ["NLP / Text Mining", "Machine Learning", "Data Engineering", "Data Visualisation (Power BI, Tableau)"],
+  "skills": {
+    "languages": ["Python", "SQL"],
+    "ml_ds": ["scikit-learn", "Pandas", "NumPy"],
+    "genai": ["RAG", "LangChain", "prompt engineering", "OpenAI and Gemini APIs"],
+    "data": ["PostgreSQL", "Databricks", "PySpark"],
+    "tools": ["Git", "GitHub Actions", "Docker (basic)", "Power BI"]
+  },
+  "not_skills": ["Java", "Kubernetes", "AWS (no hands-on experience)"]
+}

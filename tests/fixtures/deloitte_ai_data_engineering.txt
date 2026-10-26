@@ -1,0 +1,49 @@
+About the job
+Deloitte bietet führende Prüfungs- und Beratungsleistungen in Audit & Assurance, Tax & Legal, Consulting und Advisory - für nahezu 90 % der Fortune Global 500® und zahlreiche private Unternehmen. Wir liefern innovative Denkansätze, lösen komplexe Herausforderungen und fördern nachhaltiges Wachstum. Mit rund 470.000 Mitarbeitenden weltweit eröffnen wir hervorragende Karrierechancen - getragen von einem starken „Wir“ und einer Vielfalt an Perspektiven und Fähigkeiten.
+
+Du willst im Bereich Consulting – Artificial Intelligence and Data Kunden helfen, strategische Entscheidungen zu AI & Data zu treffen? Unser Team unterstützt von der Definition der AI & Data-Strategie über die Implementierung groß angelegter Datenplattformen und Visual Analytics Programme bis hin zu Einführung smarter "Age of With"-Lösungen. Sichere unseren gemeinsamen Erfolg und mach mit uns den Unterschied: als Praktikant AI & Data Engineering (m/w/d).
+
+Standorte: Berlin, Düsseldorf, Frankfurt (Main), Hamburg, Hannover, Köln, München und Stuttgart.
+
+Dein Impact:
+
+Als Praktikant AI & Data Engineering (m/w/d) arbeitest du direkt an einer Lösung, die beim Kunden im Einsatz ist: einer Cloud-Datenplattform mit AI-gestützter Dokumentenverarbeitung und einer Web-Applikation, mit der Fachbereiche ihre täglichen Entscheidungen treffen.
+
+Entwicklung: Du baust mit uns Features entlang des gesamten Stacks – Datenverarbeitung in Python und SQL, Web-Applikationen (z. B. Flask/Streamlit) und AI-Komponenten wie LLM- und OCR-basierte Automatisierung. 
+Verantwortung: Du übernimmst eigene Aufgabenpakete – vom Verständnis der fachlichen Anforderung über die Umsetzung bis zum Test und zur Übergabe an den Kunden.
+Kundennähe: Du bist bei Terminen mit dem Fachbereich dabei, nimmst Anforderungen auf, zeigst Zwischenstände und übersetzt Feedback in konkrete Verbesserungen.
+AI-Driven Development: Du arbeitest von Tag eins mit AI-Coding-Assistenten (z. B. GitHub Copilot) und hilfst uns, diese Arbeitsweise im Projekt weiterzuentwickeln.
+Cloud & IaaS: Du bekommst praktischen Einblick in eine moderne Cloud-Datenarchitektur (AWS: S3, Glue, Athena, Lambda) und lernst, wie Infrastruktur bereitgestellt, betrieben und weiterentwickelt wird. 
+
+Dein Skillset:
+
+Fortgeschrittenes Studium in (Wirtschafts-)Informatik, Data Science, (Wirtschafts-)Ingenieurwesen,Statistik, Naturwissenschaften oder in vergleichbaren Studiengängen
+Solide Python-Grundlagen und erste SQL-Kenntnisse aus Studium, Praktika, Werkstudententätigkeiten oder eigenen Projekten
+Erste Berührungspunkte mit Web-Applikationen (z. B. Flask, Streamlit, FastAPI) oder Lust, dich hier schnell einzuarbeiten 
+Interesse an AI-gestützter Softwareentwicklung und ein Grundverständnis von Cloud-Konzepten (IaaS, Storage, Compute; Vorerfahrung mit AWS, Azure oder GCP ist ein Plus, aber keine Voraussetzung) 
+Reisebereitschaft sowie Deutsch (C1) und Englisch sehr gut in Wort und Schrift
+
+Deine Chance:
+
+Echte Verantwortung für eigene Aufgabenpakete innerhalb unserer Projekte, die du selbständig bearbeitest
+Persönliche:r Mentor:in in deinem Team, der/die dir mit Rat und Tat zur Seite steht und dich mit umfassendem Know-how unterstützt
+Ein chancenreiches und internationales Umfeld, das dir einmalige Einblicke in die Arbeit des weltweit größten Prüfungs- und Beratungsunternehmens bietet
+Work-Life-Balance in einem innovativen Unternehmensumfeld, das dir Gesundheitstage, Mitarbeiter:innen-Events und vieles mehr bietet
+Bereichsübergreifendes Networking im Deloitte Student Network mit exklusiven Vorträgen und regelmäßigem Austausch beim Praktikant:innen-Stammtisch
+Vielfältige Gestaltungsspielräume und aktive Förderung einer inklusiven Unternehmenskultur – u. a. durch unsere Diversity & Inclusion Mitarbeiter:innen-Netzwerke
+
+Deine Verfügbarkeit:
+
+Als Praktikant:in bist du ab Oktober 2026 idealerweise für einen Zeitraum von mindestens vier Monaten verfügbar.
+
+Bist du bereit? Mach mit uns den Unterschied!
+
+Unser Recruiting-Team freut sich auf deine Bewerbungsunterlagen (CV sowie Abitur-, Hochschul- und Arbeitszeugnisse) über unser Online-Formular. Ein Anschreiben und ein Bewerbungsfoto sind bei uns nicht erforderlich.
+
+Gleiche Chancen für alle: Wir freuen uns über Bewerbungen von Menschen, die so vielfältig sind wie wir – unabhängig von Alter, Behinderung, ethnischer Herkunft und Nationalität, Geschlecht, Religion, sexueller Orientierung oder sozialer Herkunft. Noch Fragen? Alle Infos zu unserem Bewerbungsprozess findest du in unseren Bewerbungs-FAQs.
+
+Dein Kontakt bei Fragen rund um Karrierethemen
+
+Unser Team Talent Acquisition – Aleksandra, Anja, Julia, Lea, Lisa, Silja und ihre Teams – unterstützt dich gerne bei allen Fragen rund um deine Karriere bei Deloitte. Du erreichst uns per E-Mail unter career@deloitte.de oder telefonisch unter +49 211 87724111.
+
+Job-ID: 50440
